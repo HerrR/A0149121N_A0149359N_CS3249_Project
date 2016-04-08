@@ -28,3 +28,5 @@ cosmos:browserify
 
 
 npm-container
+twbs:bootstrap
+fortawesome:fontawesome
