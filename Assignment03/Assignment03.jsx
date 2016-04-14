@@ -1,3 +1,5 @@
+Events = new Mongo.Collection("events");
+
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
@@ -6,6 +8,7 @@ if (Meteor.isServer) {
 
 if (Meteor.isClient) {
   // This code is executed on the client only
+  Meteor.subscribe("events");
  
   Meteor.startup(function () {
     // Use Meteor.startup to render the component after the page is ready
