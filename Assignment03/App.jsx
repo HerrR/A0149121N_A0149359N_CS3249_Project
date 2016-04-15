@@ -4,7 +4,8 @@ App = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData(){
-    let query = {};
+    var mjao = "ick"
+    let query = {organiser:"R"+mjao+"ard"};
     return {
       events: Events.find(query).fetch()
     }
@@ -29,7 +30,6 @@ App = React.createClass({
           <h1>CS3249 Assignment03</h1>
           <div className="contributors">Rickard Bergeling, Katie Huang</div>
         </header>
-    
         <SearchField 
           events={this.data.events}
           onUserInput={this.handleUserInput} 

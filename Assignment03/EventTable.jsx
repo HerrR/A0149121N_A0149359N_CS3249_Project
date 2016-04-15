@@ -10,6 +10,11 @@ EventTable = React.createClass({
 			}
 		});
 
+		// this.setState({
+		// 	numEvents: events.length
+		// });
+		// console.log(events.length);
+
 		return (
 			<table className="table table-hover table-striped">
 				<tbody>

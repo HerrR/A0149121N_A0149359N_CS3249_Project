@@ -104,7 +104,7 @@
           "version": "0.4.2",
           "dependencies": {
             "readable-stream": {
-              "version": "1.0.33",
+              "version": "1.0.34",
               "dependencies": {
                 "core-util-is": {
                   "version": "1.0.2"
@@ -134,7 +134,7 @@
           "version": "0.1.2",
           "dependencies": {
             "readable-stream": {
-              "version": "1.1.13",
+              "version": "1.1.14",
               "dependencies": {
                 "core-util-is": {
                   "version": "1.0.2"

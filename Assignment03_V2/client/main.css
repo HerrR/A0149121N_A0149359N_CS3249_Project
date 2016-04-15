@@ -1,0 +1,22 @@
+/* CSS declarations go here */
+header {
+	margin-bottom:50px;
+	text-align: center;
+}
+
+header h1 {
+	font-family:'Open Sans';
+}
+
+header .contributors {
+
+}
+
+.mainActions {
+	margin-bottom:10px;
+}
+
+.singleEventBorder{
+	width:100%;
+	border-collapse:collapse;
+}

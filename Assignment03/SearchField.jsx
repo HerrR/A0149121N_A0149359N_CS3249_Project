@@ -1,10 +1,17 @@
 SearchField = React.createClass({
 
-	handleChange: function() {
+	updateSearchfield: function() {
     	this.props.onUserInput(
-     		this.refs.searchField.value,
+     		this.refs.searchField.value
     	);
   	},
+
+  	// searchButton, resetButton
+  	// performSearch: function(){
+  	// 	this.props.performSearch(
+  	// 		this.refs.searchField.value,
+  	// 	)
+  	// }
 
 	render(){
 		console.log("Props in SearchField", this.props);
@@ -19,10 +26,10 @@ SearchField = React.createClass({
 					</span>
 					<span className="col-md-6">
 						<div className="input-group">
-							<input type="text" className="form-control" onChange={this.handleChange} value={this.props.filterText} placeholder="Search" ref="searchField"/>
+							<input type="text" className="form-control" onChange={this.updateSearchfield} placeholder="Search" ref="searchField"/>
 							<span className="input-group-btn">
-								<a className="btn btn-default"><span className="glyphicon glyphicon-search" style={{color: 'rgb(51,51,51)'}}></span></a>
-								<a className="btn btn-default"><span className="fa fa-undo" style={{color: 'rgb(51,51,51)'}}></span></a>
+								<a className="btn btn-default"><span className="glyphicon glyphicon-search" ref="searchButton" style={{color: 'rgb(51,51,51)'}}></span></a>
+								<a className="btn btn-default"><span className="fa fa-undo" style={{color: 'rgb(51,51,51)'}} ref="resetButton"></span></a>
 							</span>
 						</div>
 					</span>
