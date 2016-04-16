@@ -33,7 +33,12 @@ export default class App extends Component {
     let userQuery = this.state.query;
 
     this.props.events.forEach(function(ev){
-      if((ev.title.toLowerCase().indexOf(userQuery.toLowerCase()) != -1) || (ev.organiser.toLowerCase().indexOf(userQuery.toLowerCase()) != -1)){
+      if(
+        (ev.title.toLowerCase().indexOf(userQuery.toLowerCase()) != -1) || 
+        (ev.organiser.toLowerCase().indexOf(userQuery.toLowerCase()) != -1) || 
+        (ev.tags.toLowerCase().indexOf(userQuery.toLowerCase()) != -1))
+
+      {
         events.push(ev);
       };
     });

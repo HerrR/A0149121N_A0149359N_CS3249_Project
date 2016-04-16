@@ -6,16 +6,16 @@ import { Router, Route, browserHistory, Link } from 'react-router';
 export default EventDetails = React.createClass({
   render() {
 
-    console.log("Event details props: ",this.props);
+    // console.log("Event details props: ",this.props);
     var details = this.props.details;
-    var tagString = "";
+    // var tagString = "";
 
-    for(var tag in details.tags){
-      tagString += details.tags[tag];
-      if(tag != details.tags.length-1){
-        tagString += ", "
-      }
-    }
+    // for(var tag in details.tags){
+    //   tagString += details.tags[tag];
+    //   if(tag != details.tags.length-1){
+    //     tagString += ", "
+    //   }
+    // }
 
     return (
       <table id="ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder1_mylist" cellspacing="0" border="0" className="singleEventBorder">
@@ -56,7 +56,7 @@ export default EventDetails = React.createClass({
                         </label>
                         <div className="col-md-9">
                           <span className="iItem-txt">  
-                          {tagString}
+                          {details.tags}
                           </span>
                         </div>
                       </td>
@@ -146,6 +146,7 @@ export default EventDetails = React.createClass({
         </tr>
       </tbody>
     </table>
+
     );
   }
 })

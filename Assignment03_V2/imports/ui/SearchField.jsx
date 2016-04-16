@@ -23,7 +23,7 @@ export default SearchField = React.createClass({
 
 	render(){
 
-		console.log("Props in SearchField", this.props);
+		// console.log("Props in SearchField", this.props);
 		return (
     		<div className="row mainActions">
 				<div className="col-md-12">

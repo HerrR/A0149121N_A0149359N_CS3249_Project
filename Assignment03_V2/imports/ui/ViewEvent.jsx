@@ -18,6 +18,7 @@ export default ViewEvent = React.createClass({
         chosenEvent = <EventDetails details={ev}/>;
       };
     });
+    console.log(chosenEvent);
     return chosenEvent;
   },
 
@@ -29,9 +30,18 @@ export default ViewEvent = React.createClass({
           <h1>CS3249 Assignment03</h1>
           <div className="contributors">Rickard Bergeling, Katie Huang</div>
         </header>
-        <Link to="/"><button className="btn btn-primary">Back to events</button></Link>
-        {this.getEvent()}
+        <div>
+          {this.getEvent()}
+        </div>
+        <div className="pull-right">
+          <Link to="/">
+            <button type="button" className="btn btn-primary">
+              <span class="glyphicon glyphicon-remove"></span>CLOSE
+            </button>
+          </Link>
+        </div>
       </div>
+
     );
   }
 });

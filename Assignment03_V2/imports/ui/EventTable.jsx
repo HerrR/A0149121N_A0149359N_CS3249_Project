@@ -8,7 +8,7 @@ export default EventTable = React.createClass({
 
 
 	render(){
-		console.log("Props in EventTable", this.props);
+		// console.log("Props in EventTable", this.props);
 
 		var events = this.props.events.map((ev)=>(
 			<Event key={ev._id} details={ev}/>

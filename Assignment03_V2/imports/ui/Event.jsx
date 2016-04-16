@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 export default Event = React.createClass({
 
 	render(){
-		console.log("Props in event",this.props);
+		// console.log("Props in event",this.props);
 		var eventDetails = this.props.details;
 		return (
 			<tr>
