@@ -1,12 +1,11 @@
-import React, { Component, PropTypes } from 'react';
-import { Meteor } from 'meteor/meteor';
-import classnames from 'classnames';
+import React from 'react';
 import { Link } from 'react-router';
 
+// Single event row in the event table
 export default Event = React.createClass({
-
 	render(){
-		// console.log("Props in event",this.props);
+
+		// Event details set to details passed as property from EventTable
 		var eventDetails = this.props.details;
 		return (
 			<tr>

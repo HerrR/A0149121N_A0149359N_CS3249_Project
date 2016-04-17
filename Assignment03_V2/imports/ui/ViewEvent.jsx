@@ -1,40 +1,37 @@
-import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
-import { Router, Route, browserHistory, Link } from 'react-router';
 import { Events } from '../api/events.js';
+import { Link } from 'react-router';
 
 import EventDetails from './EventDetails.jsx';
-
+import Header from './Header.jsx';
 
 export default ViewEvent = React.createClass({
   getEvent(){
-    var eventID = this.props.routeParams.eventid;
-    var allEvents = this.props.events;
-    var chosenEvent;
+    // The ID for the event we want to know more about is given by the route parameter 'eventid'
+    let eventID = this.props.routeParams.eventid;
+    let allEvents = this.props.events;
+    let chosenEvent;
+
+    // Find the event with the ID matching the route eventid route parameter
     allEvents.forEach(function(ev){
       if(ev._id._str === eventID){
         chosenEvent = <EventDetails details={ev}/>;
       };
     });
-    console.log(chosenEvent);
     return chosenEvent;
   },
 
   render() {
-    // var chosenEvent = this.getEvent();
     return (
       <div className="container">
-        <header>
-          <h1>CS3249 Assignment03</h1>
-          <div className="contributors">Rickard Bergeling, Katie Huang</div>
-        </header>
+        <Header/>
         <div>
           {this.getEvent()}
         </div>
         <div className="pull-right">
-          <Link to="/">
+          <Link to="/events">
             <button type="button" className="btn btn-primary">
               <span class="glyphicon glyphicon-remove"></span>CLOSE
             </button>

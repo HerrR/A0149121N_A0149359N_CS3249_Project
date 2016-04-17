@@ -1,14 +1,9 @@
-import React, { Component, PropTypes } from 'react';
-import { Meteor } from 'meteor/meteor';
-import classnames from 'classnames';
+import React from 'react';
 
 import Event from './Event.jsx';
 
 export default EventTable = React.createClass({
-
-
 	render(){
-		// console.log("Props in EventTable", this.props);
 
 		var events = this.props.events.map((ev)=>(
 			<Event key={ev._id} details={ev}/>

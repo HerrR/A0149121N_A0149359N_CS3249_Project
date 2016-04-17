@@ -20,3 +20,72 @@ header .contributors {
 	width:100%;
 	border-collapse:collapse;
 }
+
+.loginWrapper {
+	display: block;
+	margin:auto;
+	width:40%;
+	position: relative;
+}
+
+.login-field {
+    position:relative;
+    margin-bottom:20px;
+}
+
+.login-field i {
+    position:absolute;
+}
+
+i#userSymbol, i#passwordSymbol{
+    top:8px;
+    left:15px;
+    font-size: 14pt;
+}
+
+.login-field input {
+    padding-left:40px;
+}
+
+.loginAction.login, 
+.loginAction.register,
+.loginAction.logout {
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    color: #FFEFD7;
+    background-repeat: repeat-x;
+    background-image: linear-gradient(to bottom, #FF9B22 0%, #FF8C00 100%);
+    background-color: #FF8C00;
+    width:100%;
+    padding:15px;
+    border-radius:5px;
+    font-weight:bold;
+    font-size:1.3em;
+}
+
+.loginAction.toLogin, 
+.loginAction.toRegister {
+    text-align: center;
+    font-size:1.2em;
+    margin-top:10px;
+}
+
+.centered{
+    text-align: center;
+    display:block;
+    margin:auto;
+}
+
+.marginBottom {
+    margin-bottom:20px;
+}
+
+.biggerIcon {
+    font-size:14pt;
+    margin:0 5px;
+}
+
+.logout {
+    cursor:pointer;
+}
