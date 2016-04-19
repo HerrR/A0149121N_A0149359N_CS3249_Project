@@ -2,8 +2,6 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { browserHistory, Link } from 'react-router';
 
-import Header from './Header.jsx';
-
 export default Login = React.createClass({
 
   // Initially no error message
@@ -57,24 +55,21 @@ export default Login = React.createClass({
 
   render() {
     return (
-      <div className="container">
-        <Header/>
-        <div className="loginWrapper">
-          <div>
-            <h1 className="centered marginBottom"> Login </h1>
-            <div className="login-field">
-              <i id="userSymbol" className="fa fa-user"></i>
-              <input type="text" className="username-field form-control" onKeyPress={this.handleKeypress} ref="username" placeholder="Username"></input>
-            </div>
-            <div className="login-field">
-              <i id="passwordSymbol" className="fa fa-key"></i>
-              <input type="password" className="password-field form-control" onKeyPress={this.handleKeypress} ref="password" placeholder="Password"></input>
-            </div>
-            <button className="loginAction login" onClick={this.login}>Login</button>
-            <Link to="/register"><div className="loginAction toRegister">Register</div></Link>
+      <div className="loginWrapper">
+        <div>
+          <h1 className="centered marginBottom"> Login </h1>
+          <div className="login-field">
+            <i id="userSymbol" className="fa fa-user"></i>
+            <input type="text" className="username-field form-control" onKeyPress={this.handleKeypress} ref="username" placeholder="Username"></input>
           </div>
-          {this.state.errorMessage}
+          <div className="login-field">
+            <i id="passwordSymbol" className="fa fa-key"></i>
+            <input type="password" className="password-field form-control" onKeyPress={this.handleKeypress} ref="password" placeholder="Password"></input>
+          </div>
+          <button className="loginAction login" onClick={this.login}>Login</button>
+          <Link to="/register"><div className="loginAction toRegister">Register</div></Link>
         </div>
+        <div className="errorMessage">{this.state.errorMessage}</div>
       </div>
     );
   }

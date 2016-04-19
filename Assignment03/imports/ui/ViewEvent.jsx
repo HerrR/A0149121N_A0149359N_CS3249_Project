@@ -2,12 +2,16 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Events } from '../api/events.js';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 
 import EventDetails from './EventDetails.jsx';
-import Header from './Header.jsx';
 
 export default ViewEvent = React.createClass({
+  componentWillMount() {
+      if(Meteor.user() === null){
+        browserHistory.push("/");
+      }  
+  },
   getEvent(){
     // The ID for the event we want to know more about is given by the route parameter 'eventid'
     let eventID = this.props.routeParams.eventid;
@@ -20,13 +24,17 @@ export default ViewEvent = React.createClass({
         chosenEvent = <EventDetails details={ev}/>;
       };
     });
-    return chosenEvent;
+
+    if(chosenEvent === undefined){
+      return "Unable to find event with id "+eventID;
+    } else {
+      return chosenEvent;
+    }
   },
 
   render() {
     return (
-      <div className="container">
-        <Header/>
+      <div>
         <div>
           {this.getEvent()}
         </div>
@@ -38,7 +46,6 @@ export default ViewEvent = React.createClass({
           </Link>
         </div>
       </div>
-
     );
   }
 });

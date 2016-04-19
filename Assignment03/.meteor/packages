@@ -21,6 +21,6 @@ react-meteor-data
 accounts-password
 practicalmeteor:mocha
 fortawesome:fontawesome
-twbs:bootstrap
 accounts-ui-unstyled
 jamielob:accounts-ui-no-dropdown
+twbs:bootstrap

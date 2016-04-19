@@ -6,7 +6,8 @@ import DetailRow from './DetailRow.jsx';
 export default EventDetails = React.createClass({
   render() {
 
-    var details = this.props.details;
+    let details = this.props.details;
+    let evDate = details.eventDate.toDateString() + " " + (details.eventDate.getHours() < 10 ? '0' :'') + details.eventDate.getHours() + ":" + (details.eventDate.getMinutes() < 10 ? '0' :'') + details.eventDate.getMinutes();
 
     return (
       <table cellspacing="0" border="0" className="singleEventBorder">
@@ -29,7 +30,7 @@ export default EventDetails = React.createClass({
                       <DetailRow label={'Description'} content={details.description}/>
                     </tr>
                     <tr>
-                      <DetailRow label={'Date & Time'} content={details.eventDate}/>
+                      <DetailRow label={'Date & Time'} content={evDate}/>
                     </tr>
                     <tr>
                       <DetailRow label={'Venue'} content={details.venue}/>

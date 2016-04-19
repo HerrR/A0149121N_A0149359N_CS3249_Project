@@ -15,10 +15,9 @@ export default Register = React.createClass({
       };
   },
   
-
   // Redirect if the user is already logged in
   componentWillMount() {
-      if(Meteor.user() != undefined){
+      if(Meteor.user() != null){
         browserHistory.push("/events");
       };
   },
@@ -40,6 +39,7 @@ export default Register = React.createClass({
         name: this.refs.name.value
       }
     };
+    console.log("Register", options);
 
     // Password repeat check
     if(options.password != this.refs.repeatedPassword.value){
@@ -70,30 +70,27 @@ export default Register = React.createClass({
   
   render() {
     return (
-      <div className="container">
-        <Header/>
-        <div className="loginWrapper">
-          <h1 className="centered marginBottom"> Register </h1>
-          <div className="login-field">
-            <i id="userSymbol" className="fa fa-user"></i>
-            <input type="text" className="username-field form-control" onKeyPress={this.handleKeypress} ref="name" placeholder="Name"></input>
-          </div>
-          <div className="login-field">
-            <i id="userSymbol" className="fa fa-user"></i>
-            <input type="text" className="username-field form-control" onKeyPress={this.handleKeypress} ref="username" placeholder="Username (used for login)"></input>
-          </div>
-          <div className="login-field">
-            <i id="passwordSymbol" className="fa fa-key"></i>
-            <input type="password" className="password-field form-control" onKeyPress={this.handleKeypress} ref="password" placeholder="Password"></input>
-          </div>
-          <div className="login-field">
-            <i id="passwordSymbol" className="fa fa-key"></i>
-            <input type="password" className="password-field form-control" onKeyPress={this.handleKeypress} ref="repeatedPassword" placeholder="Repeat password"></input>
-          </div>
-          <button className="loginAction register" onClick={this.login}>Register</button>
-          <Link to="/"><div className="loginAction toLogin">Login</div></Link>
-          <div className="errorMessage">{this.state.errorMessage}</div>
+      <div className="loginWrapper">
+        <h1 className="centered marginBottom"> Register </h1>
+        <div className="login-field">
+          <i id="userSymbol" className="fa fa-user"></i>
+          <input type="text" className="username-field form-control" onKeyPress={this.handleKeypress} ref="name" placeholder="Name"></input>
         </div>
+        <div className="login-field">
+          <i id="userSymbol" className="fa fa-user"></i>
+          <input type="text" className="username-field form-control" onKeyPress={this.handleKeypress} ref="username" placeholder="Username (used for login)"></input>
+        </div>
+        <div className="login-field">
+          <i id="passwordSymbol" className="fa fa-key"></i>
+          <input type="password" className="password-field form-control" onKeyPress={this.handleKeypress} ref="password" placeholder="Password"></input>
+        </div>
+        <div className="login-field">
+          <i id="passwordSymbol" className="fa fa-key"></i>
+          <input type="password" className="password-field form-control" onKeyPress={this.handleKeypress} ref="repeatedPassword" placeholder="Repeat password"></input>
+        </div>
+        <button className="loginAction register" onClick={this.register}>Register</button>
+        <Link to="/"><div className="loginAction toLogin">Login</div></Link>
+        <div className="errorMessage">{this.state.errorMessage}</div>
       </div>
     );
   }

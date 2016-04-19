@@ -49,7 +49,8 @@ i#userSymbol, i#passwordSymbol{
 
 .loginAction.login, 
 .loginAction.register,
-.loginAction.logout {
+.loginAction.logout,
+.submitEvent {
     border-style: none;
     border-color: inherit;
     border-width: 0;
@@ -88,4 +89,58 @@ i#userSymbol, i#passwordSymbol{
 
 .logout {
     cursor:pointer;
+}
+
+.newEvent .form-control {
+    margin:10px 0;
+}
+
+table td[class*="col-"], table th[class*="col-"]{
+    float:left;
+}
+
+.pointerCursor {
+    cursor: pointer;
+}
+
+.green {
+    color: #5C9216;
+}
+
+.removeIcon {
+    color: #D21C1C;
+}
+
+.removeIcon i.fa.fa-remove.pull-right.pointerCursor {
+    padding-top: 2px;
+    padding-right: 10px;
+}
+
+td.day.active.today {
+    background-color: #FF8C00;
+    color: white;
+    border-radius: 100%;
+}
+
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+th.pointerCursor.noSelect{
+    color:#337ab7;
+}
+
+.errorMessage {
+    color:#D21C1C;
+    text-align: center;
+    margin-top:20px;
+}
+
+.notFound {
+    text-align: center;
+    margin-top:100px;
 }
