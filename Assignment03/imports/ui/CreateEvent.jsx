@@ -77,6 +77,7 @@ export default CreateEvent = React.createClass({
 
 		let errorMessage = null;
 
+		// Check the user input for missing fields and invalid formats
 		if(eventDetails.displayEnd < eventDetails.displayStart) errorMessage = "Display Start is greater than Display End, event will never be shown. ";
 		if(eventDetails.displayStart.getTime() === eventDetails.displayEnd.getTime()) errorMessage = "Display Start and Display End are the same, event will never be shown.";
 		if(!isDate(eventDetails.dateTime)) errorMessage = "Invalid event date";
@@ -86,8 +87,10 @@ export default CreateEvent = React.createClass({
 		if(eventDetails.title.length === 0) errorMessage = "No Title";
 
 		if(errorMessage === null){
+			// If the input passes all the tests, create a new event
 			this.newEvent(eventDetails);
 		} else {
+			// If there is an error message, update the state -> View will re-render and display error message. 
 			this.setState({errorMessage: errorMessage});
 		}
 	},
