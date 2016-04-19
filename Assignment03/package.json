@@ -14,5 +14,8 @@
     "react-bootstrap-datetimepicker": "0.0.22",
     "react-dom": "^15.0.1",
     "react-router": "^2.2.2"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1"
   }
 }

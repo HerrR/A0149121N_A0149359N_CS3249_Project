@@ -24,3 +24,9 @@ fortawesome:fontawesome
 accounts-ui-unstyled
 jamielob:accounts-ui-no-dropdown
 twbs:bootstrap
+sanjo:jasmine
+velocity:html-reporter
+velocity:console-reporter
+xolvio:cleaner
+velocity:meteor-stubs
+dburles:factory
